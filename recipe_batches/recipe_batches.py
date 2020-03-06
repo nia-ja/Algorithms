@@ -3,8 +3,16 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  # look into every ingredient in recipe dictionary and compare with simiar in ingredients
+  batches = []
+  # for each pair
+  for k, v in recipe.items():
+    # if no such ingredient return 0
+    if k not in ingredients:
+      return 0
+    # batches.append(ingr.amount in ingredients // ingr.amount in recipe)
+    batches.append(ingredients[k] // v)
+  return min(batches)
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
